@@ -17,7 +17,13 @@ void runTests() {
         assert(expected == actual); // Проверка, что 9 == 9
     }
 
-    std::cout << "All tests passed!" << std::endl;
+    // Тест 3
+    {
+        int expected = 3;
+        int actual = 9 / 3;
+        assert(expected == actual); // Проверка, что 3 == 3
+    }
+    std::cout << "tests passed!" << std::endl;
 }
 
 int main() {

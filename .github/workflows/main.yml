@@ -2,11 +2,9 @@ name: Hello World CI
 
 on:
   push:
-    branches:
-      - main  # Запуск при коммите в ветку main
+    branches: [ "*" ]
   pull_request:
-    branches:
-      - main  # Запуск при создании pull request в ветку main
+    branches: [ "*" ]
 
 jobs:
   hello:

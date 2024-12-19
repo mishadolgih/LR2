@@ -1,0 +1,29 @@
+ name: C++ CI
+
+   on:
+     push:
+       branches:
+         - main
+         - development
+         - release
+     pull_request:
+       branches:
+         - main
+
+   jobs:
+     build:
+
+       runs-on: ubuntu-latest
+
+       steps:
+       - name: Checkout code
+         uses: actions/checkout@v2
+
+       - name: Set up C++ environment
+         run: sudo apt-get install g++
+
+       - name: Build the project
+         run: g++ -o my_app main.cpp
+
+       - name: Run tests
+         run: ./run_tests.sh

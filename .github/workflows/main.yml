@@ -16,7 +16,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2  # Клонирование репозитория
 
-      - name: Display Hello World
-        run: |
-          echo "Hello, world!"  # Вывод текста "Hello, world!"
-          echo "This is line 1."  # Вывод первой строки
+      - name: Set up C++ env
+        run: sudo apt-get install g++  # Установка компилятора g++ (можно пропустить, если он предустановлен)
+
+      - name: Compile test.cpp
+        run: g++ -o test test.cpp  # Компиляция файла test.cpp
+        
+      - name: Run test
+        run: ./test  # Запуск скомпилированного файла
